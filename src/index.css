@@ -1,13 +1,68 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{overflow-x: hidden;font-family: 'Roboto', sans-serif;color: #637381;}
+img{max-width: 100%;}
+
+a, a:hover{text-decoration: none;cursor: pointer;}
+a, button, i{transition: all .3s;}
+svg{display: block;}
+
+.form-group label{color: #AFC0CE;margin-bottom: 4px;}
+input.form-control, select.form-control, textarea.form-control{border: 1px solid #DCEDFB;min-height: 45px;font-size: 14px;color: var(--second);}
+select.form-control{appearance: none;-webkit-appearance: none;-moz-appearance: none;background: url('./img/arrow-down.svg') no-repeat 95% center;background-size: 12px;}
+
+p{font-size: 12px;margin-bottom: 10px;font-weight: 300;}
+
+strong{font-weight: 700;}
+
+input, button, a{box-shadow: none !important;outline: none !important;}
+
+:root{
+  --primary: #340032;
+  --second: #62005E;
+  --primary-hover: #AE3FA9;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+.start-ordering{width: 640px;display: flex;align-items: center;justify-content: center;overflow: hidden;position: fixed;bottom: 0;left: 0;right: 0;z-index: 99;padding: 12px 15px;}
+.start-ordering a, .start-ordering button{border-radius: 7px;width: 100%;padding: 10px 15px;display: flex;color: #fff;font-size: 16px;align-items: center;justify-content: center;height: 48px;background: var(--second);}
+.start-ordering .rounded{border-radius: 25px !important;box-shadow: 0 3px 12px 0px rgba(98, 0, 94, .4) !important;}
+
+.master-layout{display: flex;justify-content: space-between;min-height: 100vh;}
+section{width: 640px;position: relative;}
+
+.section-header{overflow: hidden;padding: 10px 0;font-size: 25px;}
+.section-header .toggle-menu, .section-header .toggle-search{cursor: pointer;}
+.section-title{padding: 15px;background-color: #F9F9F9;color: var(--second);font-weight: 600;font-size: 20px;}
+.section-data .section-data-row h3{box-shadow: 0 2px 6px rgba(10,33,58,.1);padding: 15px 15px 10px;text-transform: uppercase;font-size: 16px;margin: 0;font-weight: lighter;color: var(--second);}
+.section-data .section-data-row ul{list-style-type: none;margin: 0;}
+.section-data .section-data-row ul li{overflow: hidden;margin: 15px 0;}
+.section-data .section-data-row ul li img{width: 140px;border-radius: 8px;}
+.section-data .section-data-row ul li .product-data{width: calc(100% - 140px);padding-left: 15px;}
+.section-data .section-data-row ul li h4{font-size: 20px;font-weight: 600;}
+.section-data .section-data-row ul li h4 a{color: var(--second);}
+.section-data .section-data-row ul li h4 a:hover{text-decoration: underline;}
+.section-data .section-data-row ul li p{margin: 0 0 5px;font-size: 14px;}
+.section-data .section-data-row ul li .price{background-color: var(--second);color: #fff;font-size: 11px;padding: 4px 10px;font-weight: normal;border-radius: 25px;}
+
+aside{width: calc(100% - 640px);background-repeat: no-repeat;background-position: center;background-size: cover;position: fixed;top: 0;right: 0;height: 100vh;}
+aside .top{display: flex;align-items: center;justify-content: space-between;padding: 15px;}
+aside .top .menu{overflow: hidden;}
+aside .top .menu a{color: #fff;margin-right: 18px;font-size: 15px;}
+aside .top .menu a:last-child{margin: 0;}
+aside .top .menu a:hover{text-decoration: underline;}
+aside .top .language{overflow: hidden;}
+aside .top .language a{color: #fff;}
+aside .top .language a:hover{text-decoration: underline;}
+aside .store-logo{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);-moz-transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);text-align: center;}
+aside .store-logo img{width: 100px;height: 100px;margin: 0 0 10px;}
+aside .store-logo .store-name{color: #fff;font-weight: 600;font-size: 20px;}
+
+
+
+@media screen and (max-width: 991px){
+  aside{top: 0;left: 0;right: 0;height: 250px;width: 100%;position: absolute;}
+  aside .store-logo{top: initial;bottom: 0;left: 0;transform: initial;padding: 15px;display: flex;align-items: center;}
+  aside .store-logo .store-name{font-size: 20px;margin-left: 10px;}
+  aside .store-logo img{width: 50px;height: 50px;margin: 0;}
+
+  section{padding-top: 250px;}
+  .section-header{display: none !important;}
+} 
