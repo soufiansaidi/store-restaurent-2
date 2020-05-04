@@ -21,7 +21,23 @@ input, button, a{box-shadow: none !important;outline: none !important;}
   --primary-hover: #AE3FA9;
 }
 
-.start-ordering{width: 640px;display: flex;align-items: center;justify-content: center;overflow: hidden;position: fixed;bottom: 0;left: 0;right: 0;z-index: 99;padding: 12px 15px;}
+header{display: none;position: fixed;top: 0;left: 0;right: 0;z-index: 999;}
+.header-right{display: flex;align-items: center;justify-content: end;}
+.header-right ul{padding: 0;margin: 0;list-style-type: none;}
+.header-right ul li{float: left;margin-right: 10px;text-transform: uppercase;}
+.header-right ul li a{color: #fff;}
+.header-right ul li a:hover{color: var(--primary-hover);}
+.toggle-menu{font-size: 25px;color: #637381;cursor: pointer;}
+.language{margin-right: 10px;}
+.language a{color: #fff;font-size: 19px;}
+.cart{margin-right: 10px;position: relative;}
+.cart svg{font-size: 25px;color: #fff;}
+.cart span{color: #fff;font-size: 10px;width: 15px;height: 15px;display: flex;align-items: center;justify-content: center;background-color: var(--primary-hover);border-radius: 50%;border-color: 2px solid var(--primary);position: absolute;top: -3px;right: -3px;}
+.profile{overflow: hidden;position: relative;}
+.profile svg{font-size: 25px;color: #fff;}
+
+
+.start-ordering{width: 640px;display: flex;align-items: center;justify-content: center;overflow: hidden;position: fixed;bottom: 0;left: 0;right: 0;z-index: 99;padding: 12px 15px;max-width: 100%;}
 .start-ordering a, .start-ordering button{border-radius: 7px;width: 100%;padding: 10px 15px;display: flex;color: #fff;font-size: 16px;align-items: center;justify-content: center;height: 48px;background: var(--second);}
 .start-ordering .rounded{border-radius: 25px !important;box-shadow: 0 3px 12px 0px rgba(98, 0, 94, .4) !important;}
 
@@ -56,6 +72,23 @@ aside .store-logo img{width: 100px;height: 100px;margin: 0 0 10px;}
 aside .store-logo .store-name{color: #fff;font-weight: 600;font-size: 20px;}
 
 
+.menu-mobile{position: fixed;top: 0;bottom: 0;left: 0;right: 0;z-index: 99999;opacity: 0;visibility: hidden;}
+.menu-mobile .menu-close{content: "";position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: rgba(0,0,0,.7);z-index: 9;}
+.menu-mobile .wrap{position: relative;z-index: 99;height: 100vh;width: 300px;background-color: #fff;left: -305px;}
+.menu-mobile .home-banner{margin: 0;}
+.menu-mobile .menu-top{background-color: var(--second);padding: 70px 0 15px;display: flex;align-items: center;justify-content: space-between;}
+.menu-mobile .menu-top a{color: #fff;text-align: center;text-transform: uppercase;font-size: 12px;display: block;width: 33.333%;}
+.menu-mobile .menu-top a svg{margin: 0 auto 4px;font-size: 25px;}
+.menu-mobile ul{padding: 15px 0;list-style-type: none;margin: 0;}
+.menu-mobile ul li{text-transform: uppercase;font-weight: 600;font-size: 13px;padding: 0 20px;}
+.menu-mobile ul li a{color: var(--second);position: relative;display: block;padding: 10px 0;display: flex;align-items: center;justify-content: start;}
+.menu-mobile ul li a:hover{color: var(--primary);}
+.menu-mobile .my-account{position: absolute;bottom: 0;left: 0;width: 100%;padding: 0 20px;}
+.menu-mobile .my-account a{text-transform: uppercase;font-weight: 600;font-size: 16px;color: var(--second);position: relative;display: block;padding: 10px 0;}
+.menu-mobile .my-account svg, .menu-mobile ul li svg{font-size: 25px;width: 50px;}
+.menu-mobile.active{visibility: visible;opacity: 1;}
+.menu-mobile.active .wrap{left: 0;}
+
 
 @media screen and (max-width: 991px){
   aside{top: 0;left: 0;right: 0;height: 250px;width: 100%;position: absolute;}
@@ -65,4 +98,7 @@ aside .store-logo .store-name{color: #fff;font-weight: 600;font-size: 20px;}
 
   section{padding-top: 250px;}
   .section-header{display: none !important;}
+
+  header{display: block;}
+  aside .top{display: none;}
 } 

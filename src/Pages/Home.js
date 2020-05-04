@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
+import Header from './../Includes/Header'
 import Sidebar from './../Includes/Sidebar'
+import Menu from './../Includes/Menu'
+
+import { ApplicationContext } from './../Context/ApplicationContext'
+
 import { MdMenu, MdSearch } from "react-icons/md";
 
 const Home = () => {
+    const {menu, setMenu} = useContext(ApplicationContext)
+
     return (
         <div className="master-layout">
+            <Header />
+            <Menu />
             <section className="px-3">
                 <div className="section-header d-flex align-items-center justify-content-between">
-                    <div className="toggle-menu"><MdMenu /></div>
+                    <div className="toggle-menu" onClick={ ()=> setMenu(!menu) }><MdMenu /></div>
                     <div className="toggle-search"><MdSearch /></div>
                 </div>
                 <div className="row mt-4">
@@ -132,7 +141,6 @@ const Home = () => {
                 </div>
             </section>
             <Sidebar />
-
         </div>
     )
 }
